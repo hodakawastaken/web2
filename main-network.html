@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hodaka | Main Network Status</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <style>
+    /* Custom CSS to hide scrollbar while keeping content scrollable */
+    #console-wrapper::-webkit-scrollbar {
+      display: none;
+      /* For Chrome, Safari, and Opera */
+    }
+
+    #console-wrapper {
+      -ms-overflow-style: none;
+      /* For Internet Explorer and Edge */
+      scrollbar-width: none;
+      /* For Firefox */
+    }
+  </style>
+</head>
+
+<body class="bg-[#050505] text-[#e0e0e0] min-h-screen relative font-sans selection:bg-[#7d5fff] selection:text-white">
+
+  <div class="fixed inset-0 z-[-10] overflow-hidden">
+    <div class="absolute inset-0 bg-black/70 z-10"></div>
+    <video autoplay muted loop plays inline class="w-full h-full object-cover opacity-60">
+      <source src="videos/background.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <nav
+    class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+    <div class="font-mono text-xl font-bold tracking-tighter text-[#a29bfe]">HODAKA_OS</div>
+    <div class="hidden md:flex gap-6 text-sm text-gray-400">
+      <a href="index.html" class="hover:text-white transition">/root//</a>
+    </div>
+  </nav>
+
+  <main class="relative z-10 max-w-5xl mx-auto px-4 pt-32 pb-12 space-y-12">
+
+    <header class="text-center space-y-4">
+      <div
+        class="inline-block px-4 py-2 rounded-full bg-[#6c5ce7]/20 border border-[#6c5ce7]/30 text-[#a29bfe] text-sm font-mono mb-2">
+        PROJECT: MAIN_NETWORK_V2.1
+      </div>
+      <h1 class="text-5xl font-bold tracking-tight text-white">Main Network Overview</h1>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Current statistics of the main network of my community server.
+      </p>
+    </header>
+
+    <section id="status-dashboard" class="grid md:grid-cols-3 gap-6">
+
+      <div class="glass-panel p-6 rounded-2xl border-green-500/20">
+        <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+          <i data-feather="monitor" class="text-green-400"></i> Core System
+        </h3>
+        <div class="space-y-2 font-mono text-sm">
+          <p class="flex justify-between">Status: <span class="text-green-400 font-bold">ONLINE</span></p>
+          <p class="flex justify-between">Uptime: <span class="text-gray-300">100.0%</span></p>
+          <p class="flex justify-between">Hosting: <span class="text-gray-300">Altare</span></p>
+        </div>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl border-[#a29bfe]/20">
+        <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+          <i data-feather="settings" class="text-[#a29bfe]"></i> Optimization
+        </h3>
+        <div class="space-y-2 font-mono text-sm">
+          <p class="flex justify-between">Lag Reduction: <span class="text-[#a29bfe]">Level A</span></p>
+          <p class="flex justify-between">Plugins: <span class="text-gray-300">18 Active</span></p>
+          <p class="flex justify-between">Next Update: <span class="text-gray-300">Q3 2026</span></p>
+        </div>
+      </div>
+
+      <div class="glass-panel p-6 rounded-2xl border-[#a29bfe]/20">
+        <h3 class="text-lg font-bold mb-3 flex items-center gap-2">
+          <i data-feather="activity" class="text-[#a29bfe]"></i> Traffic / Load
+        </h3>
+        <div class="space-y-2 font-mono text-sm">
+          <p class="flex justify-between">CPU Load: <span class="text-gray-300">35% Avg</span></p>
+          <p class="flex justify-between">Current Users: <span class="text-gray-300">0</span></p>
+          <p class="flex justify-between">Memory Util: <span class="text-gray-300">14 GB</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="glass-panel p-8 rounded-2xl space-y-6">
+      <h2 class="text-2xl font-bold flex items-center gap-3">
+        <i data-feather="cpu" class="text-[#a29bfe]"></i> Introducing... Snowy
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 text-gray-300 leading-relaxed">
+        <div class="space-y-4">
+          <p>
+            To talk to Snowy, type AI and then type your message or a question to be sent to Snowy.
+            Snowy has not been fully trained how to answer specific questions. You might find some of her responses
+            similar to Gemini 2.5 Flash, of which Snowy is a variant. Easter Egg hint: Suzume
+          </p>
+          <p>
+            Snowy is a custom trained variant of Gemini. The name Snowy originates from the name of someone beloved to
+            the Author of this website. Snowy is instructed to answer your questions in a very simple and understandable
+            way.
+          </p>
+        </div>
+        <div id="interactive-terminal"
+          class="bg-[#0a0a0a] rounded-xl p-4 font-mono text-sm border border-white/5 shadow-inner">
+
+          <div id="console-wrapper" class="h-48 overflow-hidden">
+            <div id="console-history">
+              <p class="text-green-400">$ cat main_network_goals</p>
+              <ul class="list-disc list-inside mt-2 text-gray-400 space-y-1">
+                <li>Improve network latency (Target: < 50ms)</li>
+                <li>Implement automatic anti-grief systems</li>
+                <li>Develop custom in-game utility plugins (Java)</li>
+                <li>Ensure zero downtime during config deployment</li>
+              </ul>
+              <p class="text-green-400 mt-4">$ access --granted</p>
+              <p class="text-gray-400">> Connect to the Discord server for access information.</p>
+              <p class="text-gray-400 mt-2">Type <span class="text-[#a29bfe]">ai [your question]</span> to talk to the
+                integrated LLM.</p>
+            </div>
+          </div>
+
+          <div class="flex items-center mt-4">
+            <span class="text-green-400 mr-2">$</span>
+            <input type="text" id="console-input"
+              class="bg-transparent text-gray-400 flex-1 focus:outline-none placeholder-gray-500"
+              placeholder="Type a command..." autofocus />
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="text-center pt-10 text-gray-600 text-sm font-mono">
+      <p>System.exit(0) // Main Network Status &copy; 2025</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Ensure external links open in new tab (inherited from script.js logic)
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+
+    feather.replace();
+  </script>
+
+  <script>
+    // !!! API KEY REMOVED FOR SECURITY !!!
+    const YOUR_API_KEY = "YOUR_GEMINI_API_KEY_HERE"; 
+    // This is the endpoint for the versatile Gemini 2.5 Flash model
+    const GEMINI_API_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=";
+    // ------------------------------------------------------------------
+
+    const inputField = document.getElementById('console-input');
+    const history = document.getElementById('console-history');
+    const consoleWrapper = document.getElementById('console-wrapper');
+
+    const EASTER_EGG_COMMAND = 'your name';
+    const EASTER_EGG_URL = 'https://en.wikipedia.org/wiki/Your_Name';
+
+
+    /**
+     * Function to call the AI API (structured for a REST API like Gemini)
+     */
+    async function callAI(prompt) {
+      if (!YOUR_API_KEY || YOUR_API_KEY.includes('YOUR_')) {
+        return "ERROR: AI API key not configured. Please replace 'YOUR_GEMINI_API_KEY_HERE' in the code.";
+      }
+
+      try {
+        // The API Key is appended directly to the URL structure
+        const url = `${GEMINI_API_ENDPOINT}${YOUR_API_KEY}`;
+
+        // CORRECTED PAYLOAD: Uses generationConfig for temperature
+        const payload = {
+          contents: [{ role: "user", parts: [{ text: prompt }] }],
+          generationConfig: {
+            temperature: 0.7
+          }
+        };
+
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        // Standard check for API errors
+        if (!response.ok || data.error) {
+          const errorMessage = data.error ? data.error.message : response.statusText;
+          console.error("AI API Error:", data.error || data);
+          return `API Error: ${errorMessage}. Check console for details.`;
+        }
+
+        // Extracting text and checking for empty/filtered responses
+        if (data.candidates && data.candidates.length > 0 && data.candidates[0].content.parts.length > 0) {
+          return data.candidates[0].content.parts[0].text.trim();
+        } else {
+          return "ERROR: AI returned no response (possibly content filter)."
+        }
+
+      } catch (error) {
+        console.error("AI Fetch Error:", error);
+        return "ERROR: Network or API connection failed.";
+      }
+    }
+
+    /**
+     * Main function to handle and process commands from the console input.
+     */
+    async function processCommand(command) {
+      const trimmedCommand = command.trim();
+      const lowerCommand = trimmedCommand.toLowerCase();
+      const commandParts = trimmedCommand.split(/\s+/);
+      let output = '';
+
+      // Always append the command to history immediately
+      history.innerHTML += '<p class="text-green-400 mt-2">$ ' + trimmedCommand + '</p>';
+      consoleWrapper.scrollTop = consoleWrapper.scrollHeight;
+
+      // 1. AI CHAT COMMAND
+      if (commandParts[0].toLowerCase() === 'ai') {
+        const prompt = commandParts.slice(1).join(' ');
+
+        // Show loading message
+        const loadingMessage = document.createElement('p');
+        loadingMessage.className = 'text-gray-400';
+        loadingMessage.innerHTML = '> AI: Processing request... <span class="animate-pulse">_</span>';
+        history.appendChild(loadingMessage);
+        consoleWrapper.scrollTop = consoleWrapper.scrollHeight;
+
+        // Call the external AI API
+        const aiResponse = await callAI(prompt);
+
+        // Remove loading message
+        history.removeChild(loadingMessage);
+
+        output = 'AI: ' + aiResponse;
+
+        // Append final response
+        history.innerHTML += '<p class="text-gray-400">> ' + output + '</p>';
+        consoleWrapper.scrollTop = consoleWrapper.scrollHeight;
+        return;
+      }
+
+      // 2. EASTER EGG LOGIC
+      if (lowerCommand === EASTER_EGG_COMMAND) {
+        output = 'Executing special command: RUN_KAWAII_LINK...';
+        history.innerHTML += '<p class="text-gray-400">> ' + output + '</p>';
+        consoleWrapper.scrollTop = consoleWrapper.scrollHeight;
+        setTimeout(() => {
+          window.open(EASTER_EGG_URL, '_blank');
+          history.innerHTML += '<p class="text-gray-400">> Link opened in new window. System returning to normal operation.</p>';
+          consoleWrapper.scrollTop = consoleWrapper.scrollHeight;
+        }, 1500);
+        return;
+      }
+
+      // 3. SIMPLE COMMANDS
+      if (lowerCommand === 'help') {
+        output = 'Available commands: <span class="text-[#a29bfe]">ai [question]</span>, help, ping, clear, your name.';
+      } else if (lowerCommand === 'ping') {
+        output = 'Pinging core... Response: 42ms. Status: Optimal.';
+      } else if (lowerCommand === 'clear') {
+        history.innerHTML = '';
+        return;
+      } else {
+        output = 'Error: Command "' + trimmedCommand + '" not found. Type "help".';
+      }
+
+      // Append standard response
+      history.innerHTML += '<p class="text-gray-400">> ' + output + '</p>';
+      consoleWrapper.scrollTop = consoleWrapper.scrollHeight;
+    }
+
+    // Event listener setup
+    document.addEventListener('DOMContentLoaded', () => {
+      if (inputField) {
+        inputField.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            const command = inputField.value;
+            inputField.value = '';
+            processCommand(command);
+          }
+        });
+        inputField.focus();
+      }
+    });
+  </script>
+</body>
+
+</html>
