@@ -12,8 +12,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 behavior: 'smooth'
             });
         } else {
-            // Existing logic: Scroll smoothly to a specific section ID
-            document.querySelector(targetId).scrollIntoView({
+            const target = document.querySelector(targetId);
+
+            if (!target) return;
+
+            target.scrollIntoView({
                 behavior: 'smooth'
             });
         }
@@ -152,6 +155,11 @@ let isDeleting = false;
 let typeSpeed = 100;
 
 function typeEffect() {
+    if (!textElement || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (textElement) textElement.textContent = phrases[0];
+        return;
+    }
+
     const currentPhrase = phrases[phraseIndex];
     
     if (isDeleting) {
