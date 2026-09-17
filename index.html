@@ -4,23 +4,24 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Hodaka | System Online</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 </head>
 <body class="bg-[#050505] text-[#e0e0e0] min-h-screen relative font-sans selection:bg-[#7d5fff] selection:text-white">
 
 <div class="fixed inset-0 z-[-10] overflow-hidden">
-  <div class="absolute inset-0 bg-black/70 z-10"></div>
-  <video autoplay muted loop plays inline class="w-full h-full object-cover opacity-60">
-    <source src="videos/background.mp4" type="video/mp4">
-  </video>
+  <div class="absolute inset-0 site-background" role="img" aria-label="Night mountain landscape"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-[#05050b]/75 via-[#090713]/70 to-[#050505]/95"></div>
 </div>
 
-<nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md border-b border-white/5">
-    <div class="font-mono text-xl font-bold tracking-tighter text-[#a29bfe]">HODAKA_OS</div>
-    <div class="hidden md:flex gap-6 text-sm text-gray-400">
-        <a href="#top" class="hover:text-white transition">/root//</a>
+<nav aria-label="Main navigation" class="fixed top-0 w-full z-50 px-4 sm:px-6 py-4 flex justify-between items-center backdrop-blur-md border-b border-white/5">
+  <a href="#top" class="font-mono text-xl font-bold tracking-tighter text-[#a29bfe]" aria-label="Hodaka home">HODAKA_OS</a>
+  <div class="flex gap-3 sm:gap-6 text-xs sm:text-sm text-gray-400">
+    <a href="#about" class="hover:text-white transition">about</a>
+    <a href="#projects" class="hover:text-white transition">work</a>
+    <a href="#rotations" class="hover:text-white transition">games</a>
+    <a href="#status" class="hover:text-white transition">code</a>
     </div>
 </nav>
 
@@ -41,7 +42,15 @@
         Self-proclaimed Tech Genius. <span class="text-[#a29bfe]">Professional Adapter.</span>
       </p>
       
-      <div class="flex gap-4 mt-6 justify-center md:justify-start">
+      <div class="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
+        <a href="#projects" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#6c5ce7] text-white text-sm font-semibold hover:bg-[#7d6ff0] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a29bfe]">
+            View work <i data-feather="arrow-down" class="w-4 h-4"></i>
+        </a>
+        <a href="#about" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-sm font-semibold hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#a29bfe]">
+            About me
+        </a>
+      </div>
+      <div class="flex gap-4 justify-center md:justify-start" aria-label="Social links">
         <a href="https://discord.gg/3mAzpDadCR" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition border border-white/5" aria-label="Discord Server">
             <i data-feather="message-circle" class="w-5 h-5"></i>
         </a>
@@ -58,14 +67,14 @@
     <div class="grid md:grid-cols-2 gap-8">
       <div class="space-y-4 text-gray-300 leading-relaxed">
         <p>
-          I'm a 9th-grade student navigating the gap between school grades and real-world skills. While I might not top the class charts, my ability to understand complex systems, configure servers, and adapt to any game mechanic is unmatched.
+          I’m a student Java and Web Development, and how networking and servers work. I like rubbing my face in tech's ass, creating random projects, and taking every opportunity to improve my coding skills and real world application.
         </p>
         <p>
-          Vegetarian by choice, gamer by destiny. I spend my time optimizing Minecraft backends and grinding leaderboards.
+          Outside of that, I spend a lot of time playing games, improving my technical skills, and learning through hands-on experience instead of just theory.
         </p>
       </div>
       
-      <div class="bg-[#0a0a0a] rounded-xl p-4 font-mono text-sm border border-white/5 shadow-inner">
+      <div class="glass-inset rounded-xl p-4 font-mono text-sm">
         <div class="flex gap-2 mb-4 border-b border-white/5 pb-2">
             <div class="w-3 h-3 rounded-full bg-red-500"></div>
             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -86,28 +95,21 @@
     </div>
   </section>
 
-  <section id="projects" class="space-y-6 my-40"> 
-    
-    <div class="grid md:grid-cols-3 gap-5">
-      <a href="main-network.html" class="glass-panel p-6 rounded-xl hover:border-[#6c5ce7]/50 transition group cursor-pointer block">
-        <div class="h-10 w-10 rounded-lg bg-[#6c5ce7]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition">
-            <i data-feather="server" class="text-[#a29bfe]"></i>
-        </div>
-        <h3 class="text-lg font-bold mb-1">Main Network</h3>
-        <p class="text-sm text-[#a29bfe] mb-4">Click to access project details...</p>
-        <div class="text-xs font-mono text-gray-500 bg-black/20 p-2 rounded">
-            status: <span class="text-[#a29bfe]">online</span><br>uptime: 100.0%
-        </div>
-      </a>
+  <section id="projects" class="space-y-6 my-40" aria-labelledby="projects-heading">
+    <div>
+      <p class="text-xs font-mono uppercase tracking-widest text-[#a29bfe] mb-2">Selected work</p>
+      <h2 id="projects-heading" class="text-2xl font-bold">What I work on</h2>
+    </div>
 
+    <div class="grid sm:grid-cols-2 gap-5 max-w-3xl">
       <div class="glass-panel p-6 rounded-xl hover:border-[#6c5ce7]/50 transition group cursor-default">
         <div class="h-10 w-10 rounded-lg bg-[#6c5ce7]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition">
             <i data-feather="shield" class="text-[#a29bfe]"></i>
         </div>
-        <h3 class="text-lg font-bold mb-1">Staff Operations</h3>
-        <p class="text-sm text-gray-400 mb-4">Head of Administration</p>
-        <div class="text-xs font-mono text-gray-500 bg-black/20 p-2 rounded">
-            team_size: 02<br>reports: none
+        <h3 class="text-lg font-bold mb-1">Paper Plugin Development</h3>
+        <p class="text-sm text-gray-400 mb-4">Solo Developer, building as training projects.</p>
+        <div class="glass-inset text-xs font-mono text-gray-300 p-2 rounded">
+            Plugins Completed: 2<br>In Progress: 1
         </div>
       </div>
 
@@ -115,10 +117,10 @@
         <div class="h-10 w-10 rounded-lg bg-[#6c5ce7]/20 flex items-center justify-center mb-4 group-hover:scale-110 transition">
             <i data-feather="code" class="text-[#a29bfe]"></i>
         </div>
-        <h3 class="text-lg font-bold mb-1">Config Work</h3>
-        <p class="text-sm text-gray-400 mb-4">Plugin Optimization</p>
-        <div class="text-xs font-mono text-gray-500 bg-black/20 p-2 rounded">
-            files: optimized<br>lag: reduced
+        <h3 class="text-lg font-bold mb-1">AI Web Development</h3>
+        <p class="text-sm text-gray-400 mb-4">Making cool-ass websites with Claude and Copilot.</p>
+        <div class="glass-inset text-xs font-mono text-gray-300 p-2 rounded">
+            Websites Made: 20+<br>Production Ready: 3
         </div>
       </div>
     </div>
@@ -135,13 +137,13 @@
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
         <h2 class="text-2xl font-bold">Gaming Rotation</h2>
         <span class="text-xs font-mono text-[#a29bfe] bg-[#6c5ce7]/10 px-3 py-1 rounded-full mt-2 md:mt-0">
-            System Adaptation: High
+            Random hacker sounding text here
         </span>
     </div>
 
     <div class="space-y-4">
         <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
-            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=Minecraft" class="w-12 h-12 rounded bg-gray-800" alt="Game Icon">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=Minecraft" class="w-12 h-12 rounded bg-gray-800" alt="Minecraft icon" loading="lazy" decoding="async">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-white">Minecraft (Java)</h4>
@@ -154,7 +156,7 @@
         </div>
         
         <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
-            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=RDR2" class="w-12 h-12 rounded bg-gray-800" alt="RDR2 Icon">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=RDR2" class="w-12 h-12 rounded bg-gray-800" alt="Red Dead Redemption 2 icon" loading="lazy" decoding="async">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-white">Red Dead Redemption 2</h4>
@@ -167,7 +169,7 @@
         </div>
 
         <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
-            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=Sekiro" class="w-12 h-12 rounded bg-gray-800" alt="Sekiro Icon">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=Sekiro" class="w-12 h-12 rounded bg-gray-800" alt="Sekiro icon" loading="lazy" decoding="async">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-white">Sekiro Shadows Die Twice</h4>
@@ -180,7 +182,7 @@
         </div>
 
         <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
-            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=GTAV" class="w-12 h-12 rounded bg-gray-800" alt="GTAV Icon">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=GTAV" class="w-12 h-12 rounded bg-gray-800" alt="Grand Theft Auto V icon" loading="lazy" decoding="async">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-white">Grand Theft Auto V</h4>
@@ -193,7 +195,7 @@
         </div>
 
         <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
-            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=FPS" class="w-12 h-12 rounded bg-gray-800" alt="Game Icon">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=FPS" class="w-12 h-12 rounded bg-gray-800" alt="Dying Light icon" loading="lazy" decoding="async">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-white">Dying Light</h4>
@@ -210,13 +212,13 @@
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
         <h2 class="text-2xl font-bold">Coding Rotation</h2>
         <span class="text-xs font-mono text-[#a29bfe] bg-[#6c5ce7]/10 px-3 py-1 rounded-full mt-2 md:mt-0">
-            System Adaptation: High
+            More random hacker sounding text here
         </span>
     </div>
 
     <div class="space-y-4">
         <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
-            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=Python" class="w-12 h-12 rounded bg-gray-800" alt="Python Icon">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=Python" class="w-12 h-12 rounded bg-gray-800" alt="Python icon" loading="lazy" decoding="async">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-white">Python</h4>
@@ -229,7 +231,20 @@
         </div>
 
         <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
-            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=HTML" class="w-12 h-12 rounded bg-gray-800" alt="HTML Icon">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=Java" class="w-12 h-12 rounded bg-gray-800" alt="Java icon" loading="lazy" decoding="async">
+            <div class="flex-1">
+                <div class="flex justify-between items-center">
+                    <h4 class="font-bold text-white">Java</h4>
+                    <span class="text-xs font-mono text-gray-400">INACTIVE</span>
+                </div>
+                <div class="w-full bg-gray-800 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-[#a29bfe] h-full rounded-full" style="width: 20%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition">
+            <img src="https://api.dicebear.com/7.x/shapes/svg?seed=HTML" class="w-12 h-12 rounded bg-gray-800" alt="HTML, CSS, and JavaScript icon" loading="lazy" decoding="async">
             <div class="flex-1">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-white">HTML/CSS/JS</h4>
